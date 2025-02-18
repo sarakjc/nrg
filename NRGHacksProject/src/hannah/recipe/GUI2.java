@@ -33,6 +33,7 @@ public class GUI2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
+        recipeButton = new javax.swing.JButton();
         rPanel = new hannah.recipe.recipePanel();
         recipescrollPane = new javax.swing.JScrollPane();
         recipeList = new javax.swing.JList<>();
@@ -45,6 +46,30 @@ public class GUI2 extends javax.swing.JFrame {
 
         rPanel.setPreferredSize(new java.awt.Dimension(Const.panelWIDTH, Const.panelHEIGHT));
 
+        recipeButton.setText("+");
+        recipeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recipeButtonActionPerformed(evt);
+            }
+        });
+        
+        javax.swing.GroupLayout rPanelLayout = new javax.swing.GroupLayout(rPanel);
+        rPanel.setLayout(rPanelLayout);
+        rPanelLayout.setHorizontalGroup(
+            rPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rPanelLayout.createSequentialGroup()
+                .addContainerGap(850, Short.MAX_VALUE)
+                .addComponent(recipeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+        rPanelLayout.setVerticalGroup(
+            rPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(recipeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        
         recipeList.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         recipeList.setModel(new DefaultListModel());
         recipeList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -95,6 +120,10 @@ public class GUI2 extends javax.swing.JFrame {
         recipeModel.addAll(rPanel.titles);
     }
     
+    private void recipeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }        
+    
     /**
      * @param args the command line arguments
      */
@@ -133,6 +162,7 @@ public class GUI2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private hannah.recipe.recipePanel rPanel;
+    private javax.swing.JButton recipeButton;
     private javax.swing.JList<String> recipeList;
     private javax.swing.JScrollPane recipescrollPane;
     // End of variables declaration                   

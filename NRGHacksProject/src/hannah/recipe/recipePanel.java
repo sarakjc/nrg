@@ -33,7 +33,6 @@ public class recipePanel extends JPanel implements MouseListener {
     static JTextArea titleLabel = new JTextArea("");
     static JTextArea inText = new JTextArea("");
     static JTextArea stepText = new JTextArea("");
-    static JButton addRecipe = new JButton("+");
     private BufferedImage image;
 
     int panelWidth = 1250;
@@ -45,14 +44,23 @@ public class recipePanel extends JPanel implements MouseListener {
     int ticks = 0;
     Sprite timer = new Sprite(panelWidth-1230, panelHeight-210, "images//timer.png", 308, 150);
     Sound timesUp = new Sound("timesUp.wav");
+    
+    
+//    private final JScrollPane ingreScroll;
+//    private final JScrollPane instrucScroll;
+
+    private static JTextArea ingreInfo;
+    private static JTextArea instrucInfo;
+
 
     public recipePanel() {
         super();
         setFont();
         try {
             image = ImageIO.read(new File("back.png"));
-        } catch (IOException ex) {
+        } catch (Exception e) {
             image = null;
+            System.out.println("Problem with bg pic!");
         }
 
         addMouseListener(this);
@@ -92,12 +100,29 @@ public class recipePanel extends JPanel implements MouseListener {
         this.add(titleLabel);
         this.add(inText);
         this.add(stepText);
-        this.add(addRecipe);
-        addRecipe.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
+        
+        inText.setLineWrap(true);
+        inText.setWrapStyleWord(true);
+
+        stepText.setLineWrap(true);
+        stepText.setWrapStyleWord(true);
+
+//        ingreScroll = new JScrollPane(inText);
+//        ingreScroll.setBounds(20, 170, 300, 260);
+//        ingreScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+//
+//        instrucScroll = new JScrollPane(stepText);
+//        instrucScroll.setBounds(350, 170, 490, 420);
+//        instrucScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+//        
+//        this.add(ingreScroll);
+//        this.add(instrucScroll);
+        
+//        inLabel.setVisible(false);
+//        stepLabel.setVisible(false);
+//        titleLabel.setVisible(false);
+//        inText.setVisible(false);
+//        stepText.setVisible(false);
     }
 
     @Override
@@ -116,8 +141,6 @@ public class recipePanel extends JPanel implements MouseListener {
         titleLabel.setEditable(false);
         inText.setEditable(false);
         stepText.setEditable(false);
-        addRecipe.setBounds(875, 20, 100, 100);
-        addRecipe.setFont(new Font("Verdana", Font.PLAIN, 40));
         inLabel.setFont(font);
         inLabel.setFont(font.deriveFont(40f));
         stepLabel.setFont(font);
