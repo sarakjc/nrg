@@ -109,9 +109,7 @@ public class recipePanel extends JPanel implements MouseListener{
         
         inLabel.setBounds(20, 100, 400, 50);
         stepLabel.setBounds(440, 100, 400, 50);
-        // sets background colour
-        g.setColor(Const.BG);
-        g.fillRect(0, 0, Const.panelWIDTH, Const.panelHEIGHT);
+
         inLabel.setBounds(20, 100, 310, 50);
         stepLabel.setBounds(350, 100, 400, 50);
         titleLabel.setBounds(20, 20, 820, 50);
