@@ -43,7 +43,7 @@ public class recipePanel extends JPanel implements MouseListener{
     int sec = 0;
     int ticks = 0;
     Sprite timer = new Sprite(panelWidth-1230, panelHeight-210, "images//timer.png", 308, 150);
-    Sound click = new Sound("buttonClick.mp3");
+    Sound timesUp = new Sound("timesUp.wav");
 
     public recipePanel() {
         super();
@@ -65,7 +65,9 @@ public class recipePanel extends JPanel implements MouseListener{
                 if (min >= 0) {
                     if (sec == 0) {
                         if (min == 0) {
-                            countdown.stop();
+                            System.out.println("times UP!!");
+                            timesUp.start();
+                            timesUp.loop();
                             ticks = 0;
                         } else {
                             min--;
@@ -78,6 +80,7 @@ public class recipePanel extends JPanel implements MouseListener{
                 }
             }
         });
+        
         ArrayList<ArrayList<String>> array = HannahRecipe.readFile();
         titles = array.get(0);
             ingredients = array.get(1);
@@ -153,13 +156,11 @@ public class recipePanel extends JPanel implements MouseListener{
         //if pressed start: start countdown
         if (mouseX > timer.getX()+250 && mouseX < timer.getX()+300 && mouseY > timer.getY()+23 && mouseY < timer.getY()+43) {
             countdown.start();
-            click.start();
             System.out.println("timer started");
         }
         //if pressed stop: pause countdown
         if (mouseX > timer.getX()+250 && mouseX < timer.getX()+300 && mouseY > timer.getY()+58 && mouseY < timer.getY()+78) {
             countdown.stop();
-            click.start();
             System.out.println("timer stopped");
         }
         //if pressed clear: set everything back to 0 / original
@@ -168,6 +169,7 @@ public class recipePanel extends JPanel implements MouseListener{
             min = 0;
             sec = 0;
             countdown.stop();
+            timesUp.stop();
             System.out.println("timer cleared");
         }
         //min +/-
