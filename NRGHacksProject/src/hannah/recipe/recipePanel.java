@@ -32,7 +32,6 @@ public class recipePanel extends JPanel implements MouseListener{
     static JTextArea titleLabel = new JTextArea("");
     static JTextArea inText = new JTextArea("");
     static JTextArea stepText = new JTextArea("");
-    static JButton addRecipe = new JButton("+");
     private BufferedImage image;
     
     int panelWidth = 1250;
@@ -50,8 +49,9 @@ public class recipePanel extends JPanel implements MouseListener{
         
         try {
             image = ImageIO.read(new File("back.png"));
-        } catch (IOException ex) {
+        } catch (Exception e) {
             image = null;
+            System.out.println("Problem with bg pic!");
         }
         
         addMouseListener(this);
@@ -88,17 +88,12 @@ public class recipePanel extends JPanel implements MouseListener{
         this.add(titleLabel);
         this.add(inText);
         this.add(stepText);
-        this.add(addRecipe);
+        
 //        inLabel.setVisible(false);
 //        stepLabel.setVisible(false);
 //        titleLabel.setVisible(false);
 //        inText.setVisible(false);
 //        stepText.setVisible(false);
-        addRecipe.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
     }
 
     @Override
@@ -120,8 +115,6 @@ public class recipePanel extends JPanel implements MouseListener{
         titleLabel.setEditable(false);
         inText.setEditable(false);
         stepText.setEditable(false);
-        addRecipe.setBounds(875,20,100,100);
-        addRecipe.setFont(new Font("Ariel", Font.PLAIN, 40));
         
         timer.draw(g);
         g.setFont(new Font("Press Start 2P", Font.PLAIN, 35));
