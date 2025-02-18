@@ -38,12 +38,12 @@ public class GUI2 extends javax.swing.JFrame {
         recipeList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("recipeBook");
+        setTitle("Recipe Book");
         setPreferredSize(new java.awt.Dimension(Const.WIDTH, Const.HEIGHT));
         setResizable(false);
         setSize(new java.awt.Dimension(Const.WIDTH, Const.HEIGHT));
 
-        rPanel.setPreferredSize(new java.awt.Dimension(1000, 600));
+        rPanel.setPreferredSize(new java.awt.Dimension(Const.panelWIDTH, Const.panelHEIGHT));
 
         recipeList.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         recipeList.setModel(new DefaultListModel());
@@ -64,8 +64,8 @@ public class GUI2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(recipescrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(recipescrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, Const.listWIDTH, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
                 .addComponent(rPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

@@ -21,16 +21,6 @@ public class HannahRecipe {
     /**
      * @param args the command line arguments
      */
-    
-    public static void main(String[] args) {
-        //GUI
-        JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Timer p = new Timer();
-        f.add(p);
-        f.setSize(1250, 650);
-        f.setVisible(true);
-    }
    
     public static ArrayList readFile() {
         File f = new File("myRecipeBook.txt");
