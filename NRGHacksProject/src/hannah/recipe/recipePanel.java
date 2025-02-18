@@ -32,12 +32,11 @@ public class recipePanel extends JPanel implements MouseListener{
     int panelWidth = 1250;
     int panelHeight = 650;
     
-    int stage = 2;
     javax.swing.Timer countdown;
     int min = 0;
     int sec = 0;
     int ticks = 0;
-    Sprite timer = new Sprite(panelWidth-310, panelHeight-180, "images//timer.png", 308, 150);
+    Sprite timer = new Sprite(panelWidth-1230, panelHeight-210, "images//timer.png", 308, 150);
     Sound click = new Sound("buttonClick.mp3");
 
     public recipePanel() {
@@ -95,11 +94,11 @@ public class recipePanel extends JPanel implements MouseListener{
         // sets background colour
         g.setColor(Const.BG);
         g.fillRect(0, 0, Const.panelWIDTH, Const.panelHEIGHT);
-        inLabel.setBounds(20, 100, 400, 50);
-        stepLabel.setBounds(440, 100, 400, 50);
+        inLabel.setBounds(20, 100, 310, 50);
+        stepLabel.setBounds(350, 100, 400, 50);
         titleLabel.setBounds(20, 20, 820, 50);
-        inText.setBounds(20, 170, 400, 400);
-        stepText.setBounds(440, 170, 400, 400);
+        inText.setBounds(20, 170, 310, 260);
+        stepText.setBounds(350, 170, 400, 420);
         inLabel.setEditable(false);
         stepLabel.setEditable(false);
         titleLabel.setEditable(false);
@@ -112,13 +111,13 @@ public class recipePanel extends JPanel implements MouseListener{
         g.setFont(new Font("Press Start 2P", Font.PLAIN, 35));
         g.setColor(Color.DARK_GRAY);
         if (min < 10 && sec < 10) {
-            g.drawString("0" + min + ":0" + sec, 985, 550);
+            g.drawString("0" + min + ":0" + sec, timer.getX()+45, timer.getY()+80);
         } else if (sec < 10) {
-            g.drawString(min + ":0" + sec, 985, 550);
+            g.drawString(min + ":0" + sec, timer.getX()+45, timer.getY()+80);
         } else if (min < 10) {
-            g.drawString("0" + min + ":" + sec, 985, 550);
+            g.drawString("0" + min + ":" + sec, timer.getX()+45, timer.getY()+80);
         } else {
-            g.drawString(min + ":" + sec, 985, 550);
+            g.drawString(min + ":" + sec, timer.getX()+45, timer.getY()+80);
         }
         repaint();
     }
