@@ -117,15 +117,15 @@ public class recipePanel extends JPanel implements MouseListener {
         inText.setEditable(false);
         stepText.setEditable(false);
         addRecipe.setBounds(875, 20, 100, 100);
-        addRecipe.setFont(new Font("Arial", Font.PLAIN, 40));
+        addRecipe.setFont(new Font("Verdana", Font.PLAIN, 40));
         inLabel.setFont(font);
         inLabel.setFont(font.deriveFont(40f));
         stepLabel.setFont(font);
         stepLabel.setFont(font.deriveFont(40f));
         titleLabel.setFont(font);
         titleLabel.setFont(font.deriveFont(60f));
-        inText.setFont(new Font("Arial", Font.PLAIN, 20));
-        stepText.setFont(new Font("Arial", Font.PLAIN, 20));
+        inText.setFont(new Font("Verdana", Font.PLAIN, 20));
+        stepText.setFont(new Font("Verdana", Font.PLAIN, 20));
 
         timer.draw(g);
         g.setFont(new Font("Press Start 2P", Font.PLAIN, 35));
@@ -153,7 +153,7 @@ public class recipePanel extends JPanel implements MouseListener {
             File f = new File("PerfectbomberfreepersonaluseSc-PVqmd.ttf");
             font = Font.createFont(Font.TRUETYPE_FONT, f);
         } catch (FontFormatException | IOException e) {
-            font = new Font("Arial", Font.PLAIN, 1);
+            font = new Font("Verdana", Font.PLAIN, 30);
         }
     }
 
