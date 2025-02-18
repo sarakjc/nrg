@@ -6,6 +6,8 @@ package hannah.recipe;
 
 import static hannah.recipe.HannahRecipe.readFile;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -23,6 +25,7 @@ public class recipePanel extends JPanel {
     static JTextArea titleLabel = new JTextArea("");
     static JTextArea inText = new JTextArea("");
     static JTextArea stepText = new JTextArea("");
+    static JButton addRecipe = new JButton("+");
 
     public recipePanel() {
         super();
@@ -37,11 +40,17 @@ public class recipePanel extends JPanel {
         this.add(titleLabel);
         this.add(inText);
         this.add(stepText);
+        this.add(addRecipe);
 //        inLabel.setVisible(false);
 //        stepLabel.setVisible(false);
 //        titleLabel.setVisible(false);
 //        inText.setVisible(false);
 //        stepText.setVisible(false);
+        addRecipe.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
     }
 
     @Override
@@ -52,7 +61,7 @@ public class recipePanel extends JPanel {
         g.fillRect(0, 0, Const.panelWIDTH, Const.panelHEIGHT);
         inLabel.setBounds(20, 100, 400, 50);
         stepLabel.setBounds(440, 100, 400, 50);
-        titleLabel.setBounds(20, 20, 1000, 50);
+        titleLabel.setBounds(20, 20, 820, 50);
         inText.setBounds(20, 170, 400, 400);
         stepText.setBounds(440, 170, 400, 400);
         inLabel.setEditable(false);
@@ -60,6 +69,8 @@ public class recipePanel extends JPanel {
         titleLabel.setEditable(false);
         inText.setEditable(false);
         stepText.setEditable(false);
+        addRecipe.setBounds(875,20,100,100);
+        addRecipe.setFont(new Font("Ariel", Font.PLAIN, 40));
     }
 
     public void updatePanel(int index) {
