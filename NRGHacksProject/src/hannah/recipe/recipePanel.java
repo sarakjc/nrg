@@ -22,14 +22,16 @@ public class recipePanel extends JPanel {
     static JTextArea stepLabel = new JTextArea("Instructions");
     static JTextArea titleLabel = new JTextArea("");
     static JTextArea inText = new JTextArea("");
-    static JTextArea stepText = new JTextArea("");    
-    
+    static JTextArea stepText = new JTextArea("");
+
     public recipePanel() {
         super();
         ArrayList<ArrayList<String>> array = HannahRecipe.readFile();
         titles = array.get(0);
-        ingredients = array.get(1);
-        steps = array.get(2);
+            ingredients = array.get(1);
+            steps = array.get(2);        
+            titles = array.get(0);
+        
         this.add(inLabel);
         this.add(stepLabel);
         this.add(titleLabel);
@@ -53,13 +55,13 @@ public class recipePanel extends JPanel {
         titleLabel.setBounds(20, 20, 1000, 50);
         inText.setBounds(20, 170, 400, 400);
         stepText.setBounds(440, 170, 400, 400);
-                inLabel.setEditable(false);
+        inLabel.setEditable(false);
         stepLabel.setEditable(false);
         titleLabel.setEditable(false);
         inText.setEditable(false);
         stepText.setEditable(false);
     }
-    
+
     public void updatePanel(int index) {
         titleLabel.setText(titles.get(index));
         inText.setText(ingredients.get(index));

@@ -69,8 +69,10 @@ public class HannahRecipe {
             threeD.add(steps);
             return threeD;
         } catch (IOException e) {
-            ArrayList<String> array = new ArrayList(0);
-            array.add("Recipes could not be loaded");
+            ArrayList<ArrayList<String>> array = new ArrayList();
+            ArrayList<String> stringArray = new ArrayList();
+            stringArray.add("Recipes could not be loaded");
+            array.add(stringArray);
             return array;
         }
     }
