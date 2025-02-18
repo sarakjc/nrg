@@ -10,7 +10,7 @@ import java.awt.Color;
  * @author sarak
  */
 public class Const {
-    public static final int HEIGHT = 650;
+    public static final int HEIGHT = 700;
     public static final int WIDTH = 1250;
     
     public static final int panelHEIGHT = 600;
