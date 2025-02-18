@@ -147,7 +147,7 @@ public class recipePanel extends JPanel implements MouseListener {
         stepLabel.setFont(font.deriveFont(40f));
         titleLabel.setFont(font);
         titleLabel.setFont(font.deriveFont(60f));
-        inText.setFont(new Font("Arial", Font.PLAIN, 20));
+        inText.setFont(new Font("Arial", Font.PLAIN, 18));
         stepText.setFont(new Font("Arial", Font.PLAIN, 20));
 
         timer.draw(g);
