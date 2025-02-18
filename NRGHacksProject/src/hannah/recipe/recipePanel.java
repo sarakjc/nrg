@@ -8,7 +8,12 @@ import static hannah.recipe.HannahRecipe.readFile;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
@@ -26,9 +31,17 @@ public class recipePanel extends JPanel {
     static JTextArea inText = new JTextArea("");
     static JTextArea stepText = new JTextArea("");
     static JButton addRecipe = new JButton("+");
+    private BufferedImage image;
 
     public recipePanel() {
         super();
+        
+        try {
+            image = ImageIO.read(new File("back.png"));
+        } catch (IOException ex) {
+            image = null;
+        }
+        
         ArrayList<ArrayList<String>> array = HannahRecipe.readFile();
         titles = array.get(0);
             ingredients = array.get(1);
@@ -55,9 +68,9 @@ public class recipePanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        // sets background colour
-        g.setColor(Const.BG);
-        g.fillRect(0, 0, Const.panelWIDTH, Const.panelHEIGHT);
+        
+        g.drawImage(image, 0, 0, this);
+        
         inLabel.setBounds(20, 100, 400, 50);
         stepLabel.setBounds(440, 100, 400, 50);
         titleLabel.setBounds(20, 20, 820, 50);
@@ -77,4 +90,5 @@ public class recipePanel extends JPanel {
         inText.setText(ingredients.get(index));
         stepText.setText(steps.get(index));
     }
+
 }
