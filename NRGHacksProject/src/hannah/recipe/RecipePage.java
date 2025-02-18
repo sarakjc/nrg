@@ -4,7 +4,10 @@
  */
 package hannah.recipe;
 
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 /**
@@ -26,6 +29,7 @@ public class RecipePage extends JFrame{
         //add the JPanel to the frame
         frame.add(newRec);
         //make the frame visible
-        frame.setVisible(true);        
+        frame.setVisible(true);   
+        
     }   
 }
