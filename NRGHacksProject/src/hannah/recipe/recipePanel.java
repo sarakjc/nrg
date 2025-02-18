@@ -30,7 +30,6 @@ public class recipePanel extends JPanel {
         titles = array.get(0);
             ingredients = array.get(1);
             steps = array.get(2);        
-            titles = array.get(0);
         
         this.add(inLabel);
         this.add(stepLabel);
