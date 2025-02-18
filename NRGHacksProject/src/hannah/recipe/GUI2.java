@@ -9,14 +9,14 @@ import javax.swing.*;
  *
  * @author sarak
  */
-public class GUI extends javax.swing.JFrame {
+public class GUI2 extends javax.swing.JFrame {
     
     private DefaultListModel recipeModel;
     
     /**
      * Creates new form GUI
      */
-    public GUI() {
+    public GUI2() {
         this.recipeModel = new DefaultListModel();
         initComponents();
         
