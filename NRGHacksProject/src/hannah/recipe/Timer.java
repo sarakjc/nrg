@@ -65,21 +65,17 @@ public class Timer extends JPanel implements MouseListener {
     
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        switch(stage) {
-            case 2: 
-                timer.draw(g);
-                g.setFont(new Font("Press Start 2P", Font.PLAIN, 35));
-                g.setColor(Color.DARK_GRAY);
-                if (min < 10 && sec < 10) {
-                    g.drawString("0" + min + ":0" + sec, 985, 550);
-                } else if (sec < 10) {
-                    g.drawString(min + ":0" + sec, 985, 550);
-                } else if (min < 10) {
-                    g.drawString("0" + min + ":" + sec, 985, 550);
-                } else {
-                    g.drawString(min + ":" + sec, 985, 550);
-                }
-                break;
+        timer.draw(g);
+        g.setFont(new Font("Press Start 2P", Font.PLAIN, 35));
+        g.setColor(Color.DARK_GRAY);
+        if (min < 10 && sec < 10) {
+            g.drawString("0" + min + ":0" + sec, 985, 550);
+        } else if (sec < 10) {
+            g.drawString(min + ":0" + sec, 985, 550);
+        } else if (min < 10) {
+            g.drawString("0" + min + ":" + sec, 985, 550);
+        } else {
+            g.drawString(min + ":" + sec, 985, 550);
         }
         repaint();
     }
