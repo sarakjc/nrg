@@ -45,6 +45,14 @@ public class recipePanel extends JPanel implements MouseListener {
     int ticks = 0;
     Sprite timer = new Sprite(panelWidth-1230, panelHeight-210, "images//timer.png", 308, 150);
     Sound timesUp = new Sound("timesUp.wav");
+    
+    
+//    private final JScrollPane ingreScroll;
+//    private final JScrollPane instrucScroll;
+
+    private static JTextArea ingreInfo;
+    private static JTextArea instrucInfo;
+
 
     public recipePanel() {
         super();
@@ -98,6 +106,23 @@ public class recipePanel extends JPanel implements MouseListener {
             public void actionPerformed(ActionEvent e) {
             }
         });
+        
+        inText.setLineWrap(true);
+        inText.setWrapStyleWord(true);
+
+        stepText.setLineWrap(true);
+        stepText.setWrapStyleWord(true);
+
+//        ingreScroll = new JScrollPane(inText);
+//        ingreScroll.setBounds(20, 170, 300, 260);
+//        ingreScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+//
+//        instrucScroll = new JScrollPane(stepText);
+//        instrucScroll.setBounds(350, 170, 490, 420);
+//        instrucScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+//        
+//        this.add(ingreScroll);
+//        this.add(instrucScroll);
     }
 
     @Override
