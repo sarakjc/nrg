@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 /**
  *
@@ -21,18 +22,14 @@ public class HannahRecipe {
      * @param args the command line arguments
      */
     
-     public static void main(String[] args) {
-        // TODO code application logic here
-        writeFile("Title:\nTomato and Egg\nIngredients:\n5 tomatoes\n2 eggs\nSteps:\nmix eggs\ncook eggs\ncut tomatoes\nadd tomatoes");
-        ArrayList array = readFile();
-        for (int i = 0; i < array.size(); i++) {
-            ArrayList al = (ArrayList) array.get(i);
-            System.out.println("hi");
-            for (int j = 0; j < al.size(); j++) {
-                System.out.println("hii");
-                System.out.println(al.get(j));
-            }
-        }
+    public static void main(String[] args) {
+        //GUI
+        JFrame f = new JFrame();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Timer p = new Timer();
+        f.add(p);
+        f.setSize(1250, 650);
+        f.setVisible(true);
     }
    
     public static ArrayList readFile() {
