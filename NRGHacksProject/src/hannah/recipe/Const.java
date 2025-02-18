@@ -16,7 +16,7 @@ public class Const {
     public static final int panelHEIGHT = 600;
     public static final int panelWIDTH = 1000;
     
-    public static final int listWIDTH = 175;
+    public static final int listWIDTH = 200;
     
     public static final Color BG = Color.white;
 }
