@@ -106,23 +106,6 @@ public class recipePanel extends JPanel implements MouseListener {
 
         stepText.setLineWrap(true);
         stepText.setWrapStyleWord(true);
-
-//        ingreScroll = new JScrollPane(inText);
-//        ingreScroll.setBounds(20, 170, 300, 260);
-//        ingreScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-//
-//        instrucScroll = new JScrollPane(stepText);
-//        instrucScroll.setBounds(350, 170, 490, 420);
-//        instrucScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-//        
-//        this.add(ingreScroll);
-//        this.add(instrucScroll);
-        
-//        inLabel.setVisible(false);
-//        stepLabel.setVisible(false);
-//        titleLabel.setVisible(false);
-//        inText.setVisible(false);
-//        stepText.setVisible(false);
     }
 
     @Override
@@ -147,8 +130,8 @@ public class recipePanel extends JPanel implements MouseListener {
         stepLabel.setFont(font.deriveFont(40f));
         titleLabel.setFont(font);
         titleLabel.setFont(font.deriveFont(60f));
-        inText.setFont(new Font("Arial", Font.PLAIN, 18));
-        stepText.setFont(new Font("Arial", Font.PLAIN, 20));
+        inText.setFont(new Font("Verdana", Font.PLAIN, 17));
+        stepText.setFont(new Font("Verdana", Font.PLAIN, 20));
 
         timer.draw(g);
         g.setFont(new Font("Press Start 2P", Font.PLAIN, 35));
@@ -176,7 +159,7 @@ public class recipePanel extends JPanel implements MouseListener {
             File f = new File("PerfectbomberfreepersonaluseSc-PVqmd.ttf");
             font = Font.createFont(Font.TRUETYPE_FONT, f);
         } catch (FontFormatException | IOException e) {
-            font = new Font("Arial", Font.PLAIN, 1);
+            font = new Font("Verdana", Font.PLAIN, 30);
         }
     }
 

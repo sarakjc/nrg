@@ -158,6 +158,7 @@ public class GUI2 extends javax.swing.JFrame {
                 new GUI2().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify                     
