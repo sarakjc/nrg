@@ -50,6 +50,7 @@ public class GUI2 extends javax.swing.JFrame {
         recipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recipeButtonActionPerformed(evt);
+                                FrameFlipper.switchFrame();
             }
         });
         
@@ -122,6 +123,7 @@ public class GUI2 extends javax.swing.JFrame {
     
     private void recipeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
+        FrameFlipper.stage = 2;
     }        
     
     /**

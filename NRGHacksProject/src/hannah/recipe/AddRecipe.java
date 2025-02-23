@@ -124,6 +124,15 @@ public class AddRecipe extends JPanel {
                 String info = getInfo();
                 System.out.println(info);
                 HannahRecipe.writeFile(info);
+                FrameFlipper.stage = 1;
+                FrameFlipper.switchFrame();
+            }
+        });
+        cancel.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrameFlipper.stage = 1;
+                                FrameFlipper.switchFrame();
             }
         });
     }
